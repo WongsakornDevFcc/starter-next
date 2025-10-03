@@ -1,0 +1,16 @@
+{
+  "HomePage": {
+    "title": "สวัสดีชาวโลก!"
+  },
+    "welcome": "ยินดีต้อนรับสู่แดชบอร์ด",
+    "clearData": "ล้างข้อมูล",
+  "save": "บันทึก",
+  "cancel": "ยกเลิก",
+  "email": "อีเมล",
+  "password": "รหัสผ่าน",
+  "login": "เข้าสู่ระบบ",
+  "required": "กรุณากรอก {name}",
+  "forgotPassword": "ลืมรหัสผ่าน?",
+  "noAccountYet": "ยังไม่มีบัญชี?",
+  "createOne": "สร้างบัญชี"
+}

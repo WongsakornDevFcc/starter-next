@@ -1,0 +1,16 @@
+{
+  "HomePage": {
+    "title": "Hello world!"
+  },
+    "welcome": "Welcome to the dashboard",
+    "clearData": "Clear Data",
+  "save": "Save",
+  "cancel": "Cancel",
+  "email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "required": "Please fill {name}",
+  "forgotPassword": "Forgot password?",
+  "noAccountYet": "Don't have an account yet?",
+  "createOne": "Create one"
+}
