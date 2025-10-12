@@ -2,8 +2,8 @@
   "HomePage": {
     "title": "Hello world!"
   },
-    "welcome": "Welcome to the dashboard",
-    "clearData": "Clear Data",
+  "welcome": "Welcome to the dashboard",
+  "clearData": "Clear Data",
   "save": "Save",
   "cancel": "Cancel",
   "email": "Email",
@@ -12,5 +12,14 @@
   "required": "Please fill {name}",
   "forgotPassword": "Forgot password?",
   "noAccountYet": "Don't have an account yet?",
-  "createOne": "Create one"
+  "createOne": "Create one",
+  "close": "Close",
+  "devTool": {
+    "title": "Dev Tool",
+    "default": "Default",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Info"
+  }
 }
