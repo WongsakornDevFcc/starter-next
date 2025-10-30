@@ -16,10 +16,10 @@ export default function GuestGuard({ children }: GuestGuardProps) {
 
   const check = useCallback(() => {
     if (status === "authenticated") {
-      // const redirect_to = params.get("redirect_to")
-      // if (redirect_to) {
-        // router.replace(redirect_to)
-      // } else 
+      // const redirectUrl = params.get("redirectUrl")
+      // if (redirectUrl) {
+        // router.replace(redirectUrl)
+      // }
       router.replace("dashboard")
     }
   }, [status, router, pathname, session])

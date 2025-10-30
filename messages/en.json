@@ -15,6 +15,8 @@
   "createOne": "Create one",
   "close": "Close",
   "devTool": {
+    "dataGrid": "Data Grid",
+    "goToDevTool": "Go to Dev Tool",
     "title": "Dev Tool",
     "default": "Default",
     "error": "Error",
