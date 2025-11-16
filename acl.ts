@@ -2,7 +2,7 @@ export const roleAccessMap = {
     admin: [
         "/dashboard",
         "/dashboard/[id]",
-        // "/devtool",
+        "/devtool",
         // "/admin",
         // "/api/users", // Example API route
     ],

@@ -5,6 +5,7 @@ import { routing } from "../i18n/routing";
 import NotistackProvider from "@/providers/notistackProvider/notistackProvider";
 import MuiThemeProvider from "@/providers/themeProvider/themeProvider";
 import { getMessages } from "next-intl/server";
+import { ReduxProvider } from "@/redux/context";
 
 type Props = {
   children: React.ReactNode;
@@ -20,12 +21,14 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
 return (
-  <html lang={locale} >
-    <body >
+  <html lang={locale}>
+    <body suppressHydrationWarning={true}>
       <MuiThemeProvider>
         <NextAuthProvider>
           <NextIntlClientProvider locale={locale} messages={message}>
-            <NotistackProvider>{children}</NotistackProvider>
+            <ReduxProvider>
+              <NotistackProvider>{children}</NotistackProvider>
+            </ReduxProvider>
           </NextIntlClientProvider>
         </NextAuthProvider>
       </MuiThemeProvider>

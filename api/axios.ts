@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = process.env.NEXT_PUBLIC_API_AUTH
+const BASE_URL = process.env.NEXT_PUBLIC_API_ENDPOINT 
 export default axios.create({
     baseURL: BASE_URL,
     timeout: 10000,
