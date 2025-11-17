@@ -3,23 +3,22 @@ export const roleAccessMap = {
         "/dashboard",
         "/dashboard/[id]",
         "/devtool",
-        // "/admin",
-        // "/api/users", // Example API route
+       
     ],
     cs: [
         "/dashboard",
         "/devtool",
-        // "/cs",
-        // "/api/tickets",
+       
     ],
     user: [
         "/dashboard",
         "/devtool",
+       
     ],
     visitor: [
-        "/",
         "/about",
         "/signin",
+       
     ],
 } as const;
 

@@ -1,6 +1,4 @@
-import { Button } from "@mui/material";
 import { enqueueSnackbar } from "notistack";
-import React from "react";
 
 export default function NotistacksComponent(
   message: string,

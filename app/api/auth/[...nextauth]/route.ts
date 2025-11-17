@@ -26,7 +26,7 @@ function decodeJwtExpire(jwt: string): number {
     return payload.exp * 1000; // seconds → ms payload.exp is in seconds to milliseconds to map with Date.now()
 }
 
-async function refreshAccessToken(token: any) {
+async function refreshAccessToken(token: JWT) {
     try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/authentication/refresh`, {
             method: "POST",
@@ -48,8 +48,8 @@ async function refreshAccessToken(token: any) {
             accessTokenExpires: decodeJwtExpire(newAccess),
         };
 
-    } catch (err) {
-        return { ...token, error: "RefreshAccessTokenError" };
+    } catch (err: unknown) {
+        return { ...token, error: "RefreshAccessTokenError", err: err as Error };
     }
 }
 

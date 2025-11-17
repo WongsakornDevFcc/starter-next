@@ -6,6 +6,8 @@ import NotistackProvider from "@/providers/notistackProvider/notistackProvider";
 import MuiThemeProvider from "@/providers/themeProvider/themeProvider";
 import { getMessages } from "next-intl/server";
 import { ReduxProvider } from "@/redux/context";
+import ButtonAppBar from "@/providers/appBarProvider/appBar";
+import { LocaleProvider } from "@/app/i18n/localeContext";
 
 type Props = {
   children: React.ReactNode;
@@ -20,18 +22,24 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
-return (
-  <html lang={locale}>
-    <body suppressHydrationWarning={true}>
-      <MuiThemeProvider>
+  return (
+    <html lang={locale}>
+      <body suppressHydrationWarning={true}>
         <NextAuthProvider>
           <NextIntlClientProvider locale={locale} messages={message}>
             <ReduxProvider>
-              <NotistackProvider>{children}</NotistackProvider>
+              <LocaleProvider>
+                <NotistackProvider>
+                  <MuiThemeProvider>
+                    <ButtonAppBar />
+                    <main style={{ padding: 7 }}>{children}</main>
+                  </MuiThemeProvider>
+                </NotistackProvider>
+              </LocaleProvider>
             </ReduxProvider>
           </NextIntlClientProvider>
         </NextAuthProvider>
-      </MuiThemeProvider>
-    </body>
-  </html>
-);}
+      </body>
+    </html>
+  );
+}

@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl";
 import React from "react";
 import { Button } from '@mui/material';
 interface Props {
@@ -6,7 +5,6 @@ interface Props {
   text: string;
 }
 export default function LoadingButtonComponent({ isSubmitting, text }: Props) {
-  const t = useTranslations();
   return (
     <Button
       type="submit"

@@ -21,7 +21,8 @@ export async function middleware(req: NextRequest) {
     const pathname = req.nextUrl.pathname;
 
     if (!token) return initMiddleware(req);
-    
+    if(token) return initMiddleware(req);
+
     const pathnameWithoutLocale = pathname.replace(/^\/[a-z]{2}(?=\/|$)/, '') || '/';
 
     const hasAccess = doesRoleHaveAccessToURL(role, pathnameWithoutLocale);

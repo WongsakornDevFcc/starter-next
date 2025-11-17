@@ -1,7 +1,6 @@
 import { useCallback, useEffect } from "react"
 import { useRouter, usePathname, useSearchParams } from "next/navigation"
 import { useSession } from "next-auth/react"
-import { signOut } from "next-auth/react"
 
 type GuestGuardProps = {
   children: React.ReactNode
