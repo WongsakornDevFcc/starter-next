@@ -13,7 +13,7 @@ const baseQuery = fetchBaseQuery({
   
   async prepareHeaders(headers) {
     const session = await getSession()
-    headers.set("authorization", `Bearer ${session?.tokens.access}`)
+    headers.set("authorization", `Bearer ${session?.accessToken}`)
     headers.set("Content-Type", "application/json");
     headers.set("locale", Cookies.get("NEXT_LOCALE") || "th")
     

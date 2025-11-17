@@ -17,7 +17,7 @@ function doesRoleHaveAccessToURL(role: string, url: string) {
 
 export async function middleware(req: NextRequest) {
     const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-    const role = (token?.user as { role: string })?.role || 'visitor';
+    const role = (token?.role as string) || 'visitor';
     const pathname = req.nextUrl.pathname;
 
     if (!token) return initMiddleware(req);
@@ -29,9 +29,6 @@ export async function middleware(req: NextRequest) {
     if (!hasAccess) {
         return new NextResponse('Not Found', { status: 404 });
     }
-
-    console.log("role ", role);
-    console.log("Page Access ", hasAccess);
     
     return initMiddleware(req);
 }
