@@ -31,8 +31,8 @@ export default async function LocaleLayout({ children, params }: Props) {
               <LocaleProvider>
                 <NotistackProvider>
                   <MuiThemeProvider>
-                    <ButtonAppBar />
-                    <main style={{ padding: 7 }}>{children}</main>
+                    <ButtonAppBar children={children} />
+                    {/* <main style={{ paddingLeft: 7 }}>{children}</main> */}
                   </MuiThemeProvider>
                 </NotistackProvider>
               </LocaleProvider>

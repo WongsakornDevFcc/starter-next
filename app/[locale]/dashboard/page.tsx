@@ -14,17 +14,17 @@ export default function Dashboard() {
     trigger,
     { data: userData, error: userError},
   ] = useLazyGetUserQuery();
-  if (userError) return null;
 
   useEffect(() => {
     trigger(JSON.stringify({}));
   }, [trigger]);
+
+  if (userError) return null;
   
   return (
     <Grid container spacing={2}>
       <Grid size={{ xs: 24 }}>
         <Typography variant="h4">{t("welcome")}</Typography>
-        <Button href="/devtool">{t("devTool.goToDevTool")}</Button>
       </Grid>
       <Grid size={{ xs: 24 }}>
         <Button onClick={() => trigger(JSON.stringify(userData))}>
