@@ -55,7 +55,7 @@ function LinkTab(props: LinkTabProps) {
   );
 }
 
-export default function ButtonAppBar({ children }: { children: React.ReactNode }) {
+export default function ButtonAppBar() {
   const { mode } = useThemeMode();
   const { data: session, status } = useSession();
   const [value, setValue] = useState(0);
@@ -162,7 +162,6 @@ export default function ButtonAppBar({ children }: { children: React.ReactNode }
           paddingLeft: { xs: 2, sm: 4, md: 8, lg: 8 },
         }}
       >
-        {children}
       </Box>
     </>
   );

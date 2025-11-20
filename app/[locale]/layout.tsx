@@ -8,6 +8,7 @@ import { getMessages } from "next-intl/server";
 import { ReduxProvider } from "@/redux/context";
 import ButtonAppBar from "@/providers/appBarProvider/appBar";
 import { LocaleProvider } from "@/app/i18n/localeContext";
+import { Box } from "@mui/material";
 
 type Props = {
   children: React.ReactNode;
@@ -31,8 +32,15 @@ export default async function LocaleLayout({ children, params }: Props) {
               <LocaleProvider>
                 <NotistackProvider>
                   <MuiThemeProvider>
-                    <ButtonAppBar children={children} />
-                    {/* <main style={{ paddingLeft: 7 }}>{children}</main> */}
+                    <ButtonAppBar />
+                    <Box
+                      sx={{
+                        paddingRight: { xs: 2, sm: 4, md: 8, lg: 8 },
+                        paddingLeft: { xs: 2, sm: 4, md: 8, lg: 8 },
+                      }}
+                    >
+                    {children}
+                    </Box>
                   </MuiThemeProvider>
                 </NotistackProvider>
               </LocaleProvider>
