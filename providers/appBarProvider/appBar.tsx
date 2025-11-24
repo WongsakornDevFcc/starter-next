@@ -13,8 +13,9 @@ import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Image from "next/image";
-import { Divider, Link } from "@mui/material";
+import { Button, Divider, Link } from "@mui/material";
 import { useRouter } from "next/navigation";
+import { signOut } from "next-auth/react";
 
 interface LinkTabProps {
   label?: string;
@@ -113,6 +114,9 @@ export default function ButtonAppBar() {
               </Typography>
               <ArrowOutwardIcon fontSize="small" />
             </Box>
+            <Button onClick={() => signOut()} color="inherit" size="small">
+              Sign Out
+            </Button>
             <ThemeToggleButton />
             <LocaleSwitcher />
           </Toolbar>
